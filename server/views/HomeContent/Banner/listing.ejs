@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../../Layout/head.ejs')%>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <%- include('../../Layout/header.ejs')%>
+  <!-- End Header -->
+
+  <!-- ======= Sidebar ======= -->
+  <%- include('../../Layout/sidebar.ejs')%>
+  <!-- End Sidebar-->
+
+  <main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Dashboard</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item active">Dashboard / Banner</li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <!-- <section class="section dashboard">
+      <div class="row">
+        <div class="col-lg-12">
+            fhddfhfghgfhdgftretdfgfhf
+
+        </div>
+          </div>
+        </div>
+       ****** End Left side columns
+
+      </div>
+    </section> -->
+
+
+    <section class="section">
+      <div class="row">
+        <div class="col-lg-12">
+
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Datatables</h5>
+              <!-- <p>Add lightweight datatables to your project with using the <a href="https://github.com/fiduswriter/Simple-DataTables" target="_blank">Simple DataTables</a> library. Just add <code>.datatable</code> class name to any table you wish to conver to a datatable</p> -->
+              <a href="/banner/addListing" class="btn btn-success">Add </a>
+
+              <!-- Table with stripped rows -->
+              <table class="table datatable">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">description</th>
+                    <th scope="col">Image</th>
+                    <th colspan="2">Action</th>
+
+                  </tr>
+                </thead>
+                <tbody>
+                  <% for(let element of data){%>
+
+                  <tr>
+
+                    <th scope="row">1</th>
+                    <td><%= element.title %></td>
+                    <td><%= element.discription %></td>
+                    <td><img src="/<%=element.image %>" height="50px" width="50px" alt="bannerData"></td>
+
+                    <td><%= element.status %></td>
+
+
+                    <td><a href="/banner/editListing/<%=element._id %>" class="btn btn-info">Update</a></td>
+                    <td><a href="/banner/deleteListing/<%=element._id %>" class="btn btn-danger">Delete</a></td>
+                  </tr>
+                  <%}%>
+
+                  
+                </tbody>
+              </table>
+              <!-- End Table with stripped rows -->
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+  </main><!-- End #main -->
+<div style="margin-top: 300px;"></div>
+
+  <!-- ======= Footer ======= -->
+  <%- include('../../Layout/footer.ejs')%>

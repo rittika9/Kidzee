@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../../Layout/head.ejs')%>
+
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <%- include('../../Layout/header.ejs')%>
+
+  <!-- End Header -->
+
+  <!-- ======= Sidebar ======= -->
+  <%- include('../../Layout/sidebar.ejs')%>
+
+  <!-- End Sidebar-->
+
+  <main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Add Banner Data</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item">Banner</li>
+          <li class="breadcrumb-item active">Add</li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+    <section class="section">
+      <div class="row">
+        <div class="col-lg-6">
+
+          <div class="card" >
+            <div class="card-body">
+              <h5 class="card-title">Update Data</h5>
+
+              <!-- Horizontal Form -->
+              <form action="/banner/updateListing" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="b_id" value="<%=singledata._id%>">
+
+                <div class="row mb-3">
+                  <label for="inputEmail3" class="col-sm-3 col-form-label">Title</label>
+                  <div class="col-sm-9">
+                    <input type="text" class="form-control" id="inputText" name="title" value="<%=singledata.title%>">
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label for="inputEmail3" class="col-sm-3 col-form-label">Discription</label>
+                  <div class="col-sm-9">
+                    <input type="text" class="form-control" id="inputText" name="discription" value="<%=singledata.discription%>">
+                  </div>
+                </div>
+              
+                <div class="row mb-3">
+                  <label for="inputEmail3" class="col-sm-3 col-form-label">Image</label>
+                  <div class="col-sm-9">
+                    <input type="file" class="form-control" id="inputText" name="image" accept="image/png, image/jpeg,image/jpg" value="<%=singledata.image%>" >
+                  </div>
+                </div>
+
+              
+                <div class="text-center">
+                  <button type="submit" class="btn btn-primary">Update</button>
+                </div>
+              </form><!-- End Horizontal Form -->
+
+            </div>
+          </div>
+
+          
+
+        </div>
+
+       
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <%- include('../../Layout/footer.ejs')%>
